@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input  ;" type="search" placeholder="search here" id="searchbox">
+    <ol id="list"></ol>
+
+    <script>
+        let movies = [
+            "The Shawshank Redemption",
+            "The Godfather",
+            "The Dark Knight",
+            "The Shawshank Redemption",
+            "The Godfather",
+            "The Dark Knight",
+            "Schindler's List",
+            "12 Angry Men",
+            "Pulp Fiction",
+            "The Lord of the Rings: The Return of the King",
+            "The Good, the Bad and the Ugly",
+            "Fight Club",
+            "Forrest Gump",
+            "Inception",
+            "Star Wars: Episode V - The Empire Strikes Back",
+            "The Matrix",
+            "Goodfellas",
+            "One Flew Over the Cuckoo's Nest",
+            "Seven Samurai",
+            "City of God",
+            "Se7en",
+            "The Silence of the Lambs",
+            "It's a Wonderful Life",
+            "The Lord of the Rings: The Fellowship of the Ring",
+            "The Usual Suspects",
+            "Saving Private Ryan",
+            "Spirited Away",
+            "The Green Mile",
+            "Interstellar",
+            "Léon: The Professional",
+            "The Pianist",
+            "The Departed",
+            "Gladiator",
+            "The Lion King",
+            "The Prestige",
+            "Back to the Future",
+            "The Intouchables",
+            "The Lives of Others",
+            "The Godfather: Part II",
+            "Whiplash",
+            "The Terminator",
+            "The Shining",
+            "Django Unchained",
+            "Cinema Paradiso",
+            "American History X",
+            "Alien",
+            "The Great Dictator",
+            "The Departed",
+            "The Truman Show",
+            "Terminator 2: Judgment Day",
+            "The Grand Budapest Hotel",
+            "The Sting",
+            "The Lion King",
+            "Amélie",
+            "Reservoir Dogs",
+            "Life is Beautiful",
+            "The Dark Knight Rises",
+            "Das Boot",
+            "The Princess Bride",
+            "The Apartment",
+            "The Treasure of the Sierra Madre",
+            "The Bridge on the River Kwai",
+            "A Clockwork Orange",
+            "Taxi Driver",
+            "Full Metal Jacket",
+            "Inglourious Basterds",
+            "Eternal Sunshine of the Spotless Mind",
+            "Snatch",
+            "2001: A Space Odyssey",
+            "To Kill a Mockingbird",
+            "Requiem for a Dream",
+            "The Sixth Sense",
+            "The Elephant Man",
+            "Jurassic Park",
+            "The Big Lebowski",
+            "The Graduate",
+            "A Beautiful Mind",
+            "Raiders of the Lost Ark",
+            "In the Mood for Love",
+            "Toy Story",
+            "Apocalypse Now",
+            "Rocky",
+            "The Deer Hunter",
+            "The Thing",
+            "The Good, the Bad, the Weird",
+            "Heat",
+            "Princess Mononoke",
+            "The Shawshank Redemption",
+            "The Godfather",
+            "The Dark Knight",
+            "Schindler's List",
+            "12 Angry Men",
+            "Pulp Fiction",
+            "The Lord of the Rings: The Return of the King",
+            "The Good, the Bad and the Ugly",
+            "Fight Club",
+            "Forrest Gump",
+            "Inception",
+            "Star Wars: Episode V - The Empire Strikes Back",
+            "The Matrix",
+            "Goodfellas",
+            "One Flew Over the Cuckoo's Nest",
+            "Seven Samurai",
+            "City of God",
+            "Se7en",
+            "The Silence of the Lambs",
+            "It's a Wonderful Life",
+            "The Lord of the Rings: The Fellowship of the Ring",
+            "The Usual Suspects",
+            "Saving Private Ryan",
+            "Spirited Away",
+            "The Green Mile",
+            "Interstellar",
+            "Léon: The Professional",
+            "The Pianist",
+            "The Departed",
+            "Gladiator",
+            "The Lion King",
+            "The Prestige",
+            "Back to the Future",
+            "The Intouchables",
+            "The Lives of Others",
+            "The Godfather: Part II",
+            "Whiplash",
+            "The Terminator",
+            "The Shining",
+            "Django Unchained",
+            "Cinema Paradiso",
+            "American History X",
+            "Alien",
+            "The Great Dictator",
+            "The Departed",
+            "The Truman Show",
+            "Terminator 2: Judgment Day",
+            "The Grand Budapest Hotel",
+            "The Sting",
+            "The Lion King",
+            "Amélie",
+            "Reservoir Dogs",
+            "Life is Beautiful",
+            "The Dark Knight Rises",
+            "Das Boot",
+            "The Princess Bride",
+            "The Apartment",
+            "The Treasure of the Sierra Madre",
+            "The Bridge on the River Kwai",
+            "A Clockwork Orange",
+            "Taxi Driver",
+            "Full Metal Jacket",
+            "Inglourious Basterds",
+            "Eternal Sunshine of the Spotless Mind",
+            "Snatch",
+            "2001: A Space Odyssey",
+            "To Kill a Mockingbird",
+            "Requiem for a Dream",
+            "The Sixth Sense",
+            "The Elephant Man",
+            "Jurassic Park",
+            "The Big Lebowski",
+            "The Graduate",
+            "A Beautiful Mind",
+            "Raiders of the Lost Ark",
+            "In the Mood for Love",
+            "Toy Story",
+            "Apocalypse Now",
+            "Rocky",
+            "The Deer Hunter",
+            "The Thing",
+            "The Good, the Bad, the Weird",
+            "Heat",
+            "Princess Mononoke"
+            // Add your movie list here...
+        ];
+
+        let newMovies = movies.map((movie) => {
+            return movie.toLowerCase();
+        });
+        console.log(newMovies);
+
+        let searchbox = document.getElementById('searchbox');
+        let list = document.getElementById('list');
+
+        let search = () => {
+            let query = searchbox.value.toLowerCase();
+
+            let result = newMovies.filter((movie) => {
+                if (movie.includes(query)) return movie;
+            });
+
+            if (result.length == 0) {
+                list.innerHTML = `Oops! Movie not found. 👍`;
+            } else {
+                list.innerHTML = "";
+                result.forEach(element => {
+                    list.innerHTML += `<li>${element}</li>`;
+                });
+            }
+        }
+
+        searchbox.addEventListener(`keyup`, search);
+    </script>
+</body>
+
+</html>

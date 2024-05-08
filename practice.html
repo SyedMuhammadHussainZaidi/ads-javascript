@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Display & Counter</title>
+ <style>.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #messageContainer {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  #counterContainer {
+    font-size: 24px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Message Display</h1>
+    <button id="startMessages">Start Messages</button>
+    <button id="stopMessages">Stop Messages</button>
+    <div id="messageContainer"></div>
+
+    <h1>Counter</h1>
+    <button id="startCounter">Start Counter</button>
+    <button id="stopCounter">Stop Counter</button>
+    <div id="counterContainer">0</div>
+  </div>
+  <script>// Messages
+    const messages = [
+      "Hello!",
+      "Welcome to the message display.",
+      "This is a demonstration of setTimeout and clearTimeout.",
+      "Messages will appear every 3 seconds until stopped."
+    ];
+    
+    let messageTimer;
+    
+    function displayMessages() {
+      let index = 0;
+      function showMessage() {
+        document.getElementById('messageContainer').textContent = messages[index];
+        index = (index + 1) % messages.length;
+        messageTimer = setTimeout(showMessage, 3000); // Change 3000 to adjust time interval
+      }
+      showMessage();
+    }
+    
+    document.getElementById('startMessages').addEventListener('click', () => {
+      displayMessages();
+    });
+    
+    document.getElementById('stopMessages').addEventListener('click', () => {
+      clearTimeout(messageTimer);
+      document.getElementById('messageContainer').textContent = "Messages stopped.";
+    });
+    
+    // Counter
+    let counterTimer;
+    let counterValue = 0;
+    
+    function displayCounter() {
+      counterTimer = setInterval(() => {
+        counterValue++;
+        document.getElementById('counterContainer').textContent = counterValue;
+      }, 1000); // Change 1000 to adjust time interval
+    }
+    
+    document.getElementById('startCounter').addEventListener('click', () => {
+      displayCounter();
+    });
+    
+    document.getElementById('stopCounter').addEventListener('click', () => {
+      clearInterval(counterTimer);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h1>pjs in java script</h1>
+
+<button id="startButton">Start</button>
+<button id="stopButton">Stop</button>
+
+<script>
+    const sayMe = function () {
+        console.log("M.Hussain");
+    }
+
+    let intervalId;
+
+    document.getElementById('startButton').addEventListener('click', function () {
+        intervalId = setInterval(sayMe, 0000);
+    });
+
+    document.getElementById('stopButton').addEventListener('click', function () {
+        clearInterval(intervalId);
+    });
+
+// </script>
+</body>
+
+</html>

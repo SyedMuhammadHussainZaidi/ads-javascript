@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>promises in javascript</h1>
+
+
+    <script>
+
+        //promise example 1
+        // const promisesone = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         console.log("promises one is resolved")
+        //         resolve()
+        //     }, 3000);
+        // })
+        // promisesone.then(function () {
+        // console.log("promised consumed");
+        // })
+
+        //example 2
+
+        // new Promise(function (res, rej) {
+        //     setTimeout(function () {
+        //         console.log("hussian taks 2")
+        //         res()
+        //     }, 4000)
+        // }).then(function () {
+        //     console.log("task 2")
+        // })
+
+
+        // // example 3
+        // const promiseThree =  new Promise(function(res,rej){
+        //     setTimeout(function(){
+        //         res({username: "hussain", jobtiitle:"webdeveloper",  age: 23 , batch : "2309b2"})
+        //     },200)
+        // })
+
+        // promiseThree.then (function(data){
+        //     console.log(data);
+        // })
+
+
+        // example 4
+
+        // let pizzakhilaya = false;
+        // new Promise(function (resolve, reject) {
+        //     if (pizzakhilaya == true) {
+        //         return resolve("thanks for the treat😍");
+
+        //     } else {
+        //         return reject("acha nahi kiya tumne😡")
+        //     }
+        // }).then(function (e) {
+        //     console.log(e)
+        // }).catch(function (e) {
+        //     console.log(e)
+        // });
+
+
+        // example 5 
+
+
+        let number = Math.round(Math.random() * 10);
+        console.log(number)
+        new Promise(function (resolve, reject) {
+
+            if (number > 5) {
+
+                return resolve("tune merra kam kar diya  thanks jani")
+            } else {
+                return reject("tune mara kam nahi kiya ")
+            }
+        }).then(function (data) {
+            console.log(data)
+        }).catch(function (data) {
+            console.log(data)
+        })
+
+
+
+    </script>
+</body>
+
+</html>

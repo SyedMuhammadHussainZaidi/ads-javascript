@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="overflow:x-hidden;" class="col-md-4"> <h1>basics of java scripts</h1></div>
+   
+
+    <script>
+
+        // printing technique
+        //Alerrts in java script
+        // window.alert("hello")
+        // alert("hi")
+
+
+        // <!-----console--->
+        // console.log("hellon hussain")
+        // console.log(23+32);
+
+        // <--!--document-->
+        // document.write("hello hussain" + "<br/>")
+        // document.write(25+23);
+
+        // vaiable
+        // var nationality ="pakistani";
+        // console.log(nationality)
+
+        // datatype in javascript 
+        // var nationality = "pakistani";//streing
+        // var age = "23"; //number
+        // var isfeepaid = "true"; //boolean
+        // var weight = 60.55 //floating
+        // console.log(nationality,age,isfeepaid,weight)
+
+        // //declaeration & intilization
+        // var age = 25; //or
+
+        // var age;//declearation
+        // age = 25; //initiliazation
+
+
+        //datatypes
+        // 6 datatypes are considerd to be primitives.
+
+        // a:Number -- inteeger,float etc
+        // b:Srting -- an arry of character
+        //c: boolean -- true,false
+        // d:undefined --a declaered variable but hasn't give been given a value
+        // e:symbole --a unique vaue that's 
+
+        //complex types
+
+        //a: Objects
+        //b:function
+        //c:arrys
+
+
+
+
+
+
+        // var in string
+        //  var fname = "hussain";
+        //  console.log(fname);
+        // 
+        //  fname = "abc";
+        //  console.log(fname);
+
+        //  fname = "babar";
+        //  console.log(fname)
+
+
+
+        // 1.text sdtring are always enclosed in quotes
+        // 2. you can use single or double quotes
+
+        // var name ="mark"
+        // var nationality = "indian"
+        // var message = "how are yooooou ?"
+        // console.log(name,nationality,message)
+
+        //variables for number
+        // var age = 25;
+        // var weight = 23.4;
+        // var newweight = weight + 12;
+        // var originalnumber = 12 + 5;
+
+
+        //var of undefined
+
+        // var car;
+        // var bike;
+        // console.log(bike);
+
+
+        // var fname = "daniyal";
+        // console.log(fname);
+        // fname = undefined
+        // console.log(fname)
+
+
+
+        //variable for null
+
+        // var fname = null;
+        // fname= "hani";
+        // fname=null;
+
+        // fname= 4500;
+        // fname = true;
+
+        // console.log(typeof (fname));
+
+        //statments
+
+        // each line below is statment
+
+        // var a = 4;
+        // var b = 2;
+        // var c = 0;
+        // c = a + b;
+        // alert(a);
+        // console.log(c)
+
+
+        // var input = prompt("enter a alphabet");
+        // var sameLevel = input.toLowerCase();
+        // if (sameLevel == "a" || sameLevel == "e" || sameLevel == "i" || sameLevel == "o" || sameLevel == "u") {
+        //     console.log("it is a vowel");
+
+        // }
+        // else {
+        //     console.log("it's not a vowel")
+        // }
+
+
+
+        // var input = prompt("enter a alphabet");
+        // var sameLevel = input.toUpperCase();
+        // if (sameLevel == "A" || sameLevel == "E" || sameLevel == "I" || sameLevel == "O" || sameLevel == "U") {
+        //     console.log("it is a vowel");
+
+        // }
+        // else {
+        //     console.log("it's not a vowel")
+        // }
+
+
+
+        //     var num = + prompt("Enter a number?");
+
+        //    for(var i = 1; i <= 10; i++){
+        //         console.log(num + "x" + i + "=" + num*i);
+        //           
+
+
+
+
+
+        //ARRY 
+
+        var countries = ["psk", "ind", "iran", "malaysia"]
+        console.log(countries);
+        countries.pop();
+        console.log(countries);
+
+
+        // var a = 80
+        // var marks = [77, 89, 90, 23, 45];
+        // // add elemnt at last
+        // // marks.push(a);
+
+        // console.log(marks);
+
+
+
+        //Arry
+
+        // var car = ["mehran", "civic", "city", "carolla", "accord", "bmw", "mercerdes", "markx", "swift", "vezel"];
+        // console.log(car);
+        // var sliceArray = car.slice(1, 4);
+        // var sliceArray = car.slice(0, 8);
+        // var sliceArray = car.slice(5, 10);
+        // console.log(sliceArray);
+
+        // reverse 
+
+        // var num = [23,56,77];
+        // var reverseArray = num.reverse();
+
+        // console.log(reverseArray);
+
+
+        // concat()
+        // var num = [23,45,67,"hussain"];
+        // var num1 = [32,55,78,67,45,32];
+
+        // var concatArray = num.concat(num1);
+
+        // console.log(num);
+        // console.log(num1);
+        // console.log(concatArray);
+
+
+
+        //inclides
+
+        // var includeNum = num1.includes(788);
+        // console.log(includeNum);
+
+
+
+        //splice 
+        
+        // var stds = [ "abduallah" , "ali", "sana","maria" , "hafeez" , "hassan"];
+        // console.log(stds);
+        // var spliceArray = stds.splice(2,0 , "zainab" ,"ramsha" , "basim")
+
+        // console.log(stds);
+
+        // filter()
+                var num = [1, 2, 3, 4, 5, 6, 7.9];
+
+        var oddNum =  num.filter((num) =>  num % 2 != 0);
+        console.log(oddNum);
+        
+        // some()
+        var someNum =  num.some((num) =>  num % 2 == 0);
+        console.log(someNum); //true
+
+// // every()
+        var everyNum =  num.every((num) =>  num % 2 == 0);
+        console.log(everyNum); //false
+
+
+        //reduce method
+
+        const sum = number.reduce((total,num))
+
+    </script>
+    iv>
+</body>
+
+</html>
